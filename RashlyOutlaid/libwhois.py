@@ -32,8 +32,25 @@ except NameError:
     binary_type = bytes
 
 
-ASNRecord = namedtuple("ASNRecord", ["asn", "prefix", "asname", "cn", "isp", "peers"])
-
+ASNRecord = namedtuple('ASNRecord',
+                       ['asn', 'prefix', 'asname', 'cn', 'isp', 'peers'])
+AVRecord = namedtuple('AVRecord', ['md5', 'vendor', 'signature', 'timestamp'])
+MalwareRecord = namedtuple('MalwareRecord',
+                           ['timestamp',
+                            'first_seen',
+                            'last_seen',
+                            'type',
+                            'sha256',
+                            'md5',
+                            'sha1',
+                            'pehash',
+                            'tlsh',
+                            'import_hash',
+                            'entropy',
+                            'filesize',
+                            'adobe_malware_classifier',
+                            'magic',
+                            'anti_virus'])
 
 def astext(data):
     """
